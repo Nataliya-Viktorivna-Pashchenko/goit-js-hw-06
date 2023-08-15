@@ -7,11 +7,12 @@ const ingredients = [
   'Condiments',
 ];
 let listIngredients;
+let listIngredientsArr = [];
 const ulIngredients = document.getElementById("ingredients");
 for (let i = 0; i < ingredients.length; i += 1) {
   const listIngredients = document.createElement("li");
   listIngredients.classList.add('item');
   listIngredients.textContent = ingredients[i];
-  ulIngredients.insertAdjacentElement("beforeend", listIngredients)
+  listIngredientsArr.push(listIngredients);
 };
-console.log(listIngredients);
+ulIngredients.append(...listIngredientsArr);

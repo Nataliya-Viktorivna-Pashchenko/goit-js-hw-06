@@ -8,7 +8,7 @@ const loginHendler = (event) => {
             password: password.value,
         };
     if (info.email === '' || info.password === '') {
-        console.log('Всі поля повинні бути заповнені');
+        alert('Всі поля повинні бути заповнені');
     } else {
         console.log(info);
         loginForm.reset();

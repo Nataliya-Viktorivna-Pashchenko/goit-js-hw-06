@@ -1,9 +1,11 @@
 const inputElem = document.querySelector("#font-size-control");
 const textElem = document.querySelector("#text");
-let step = 20;
-const changeInput = (event) => {
-    step += 5;
-    textElem.style.fontSize = `${step}px`;
-    console.log(event);
-}
+const min = Number(inputElem.min);
+const max = Number(inputElem.max);
+textElem.style.fontSize = `${((max - min) / 2)}px`;
+function changeInput(inputElem)     {
+    textElem.style.fontSize = `${inputElem.target.value}px`;
+};
+
+
 inputElem.addEventListener("input", changeInput);
